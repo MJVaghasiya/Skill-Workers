@@ -56,7 +56,7 @@ const Job = () => {
       <PageHeader title="Job Search" breadcrumb="Job Search" />
 
       <section className="py-12">
-        <div className="max-w-[1600px] mx-auto px-4">
+        <div className="container">
 
           {/* Search Bar */}
           <div className="neu-out rounded-2xl p-6 mb-10">

@@ -22,7 +22,7 @@ const About = () => {
 
       {/* Our Background */}
       <section className="py-16">
-        <div className="max-w-[1600px] mx-auto px-4">
+        <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-5 py-2 mb-6">
@@ -61,7 +61,7 @@ const About = () => {
 
       {/* Values */}
       <section className="py-16 bg-[#e0e5ec]">
-        <div className="max-w-[1600px] mx-auto px-4">
+        <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-[#2d3748] mb-3">Our Core Values</h2>
             <p className="text-[#718096] max-w-xl mx-auto">
@@ -84,7 +84,7 @@ const About = () => {
 
       {/* High Quality Care */}
       <section className="py-16">
-        <div className="max-w-[1600px] mx-auto px-4">
+        <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 neu-out rounded-3xl overflow-hidden">
               <img src={img3} alt="High Quality Care" className="w-full h-[420px] object-cover" />

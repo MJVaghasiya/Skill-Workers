@@ -39,7 +39,7 @@ const Navbar = () => {
           scrolled ? "neu-out" : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
+        <div className="container lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-18">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">

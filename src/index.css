@@ -259,6 +259,9 @@
   .underline-anim:hover::after {
     @apply w-full;
   }
+  .container{
+    @apply mx-auto px-4 w-full;
+  }
 }
 
 /* ─── UTILITY LAYER ───────────────────────────────────────────── */

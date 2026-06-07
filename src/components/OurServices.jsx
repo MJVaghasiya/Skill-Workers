@@ -71,7 +71,7 @@ const OurServices = () => {
 
       {/* Intro */}
       <section className="py-16">
-        <div className="max-w-[1600px] mx-auto px-4">
+        <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-5 py-2 mb-6">
@@ -118,7 +118,7 @@ const OurServices = () => {
 
       {/* CTA Banner */}
       <section className="py-16">
-        <div className="max-w-[1600px] mx-auto px-4">
+        <div className="container">
           <div className="neu-out rounded-3xl p-10 lg:p-14 text-center">
             <h3 className="text-[#2d3748] mb-4">
               Ready to Find Your{" "}

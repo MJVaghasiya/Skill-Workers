@@ -22,7 +22,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen bg-[#e0e5ec] pt-24 pb-16 flex items-center overflow-hidden">
-      <div className="max-w-[1600px] mx-auto px-4 w-full">
+      <div className="container w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Left Content */}

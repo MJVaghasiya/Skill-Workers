@@ -27,7 +27,7 @@ const FitIn = () => {
 
   return (
     <section className="py-20 bg-[#e0e5ec]">
-      <div className="max-w-[1600px] mx-auto px-4">
+      <div className="container">
 
         {/* Header */}
         <div className="text-center mb-14">

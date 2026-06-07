@@ -92,7 +92,7 @@ const Contact = () => {
 
       {/* Contact Cards */}
       <section className="py-10">
-        <div className="max-w-[1600px] mx-auto px-4">
+        <div className="container">
           <div className="grid sm:grid-cols-3 gap-5 mb-14">
             {contactInfo.map(({ icon, label, value, href, gradient, color }) => (
               <a

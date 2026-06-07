@@ -18,7 +18,7 @@ const benefits = [
 const AchieveGoal = () => {
   return (
     <section className="py-20 bg-[#e0e5ec]">
-      <div className="max-w-[1600px] mx-auto px-4">
+      <div className="container">
         <div className="neu-out rounded-3xl p-8 lg:p-14">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
 
