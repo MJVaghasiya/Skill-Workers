@@ -1,0 +1,37 @@
+[
+    {
+      "image": "./job-img/medical-team.png",
+      "title": "Software Engineer",
+      "description": "Lorem ipsum dolor sit amet Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt .",
+      "salary": "$17 - $20",
+      "location": "New York"
+    },
+    {
+      "image": "./job-img/support-worker.png",
+      "title": "Graphic Designer",
+      "description": "Lorem ipsum dolor sit amet Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt .",
+      "salary": "$60,000",
+      "location": "Los Angeles",
+      "latitude": 34.0522,
+      "longitude": -118.2437
+    },
+    {
+      "image": "./job-img/medical-team.png",
+      "title": "Marketing Manager",
+      "description": "Lorem ipsum dolor sit amet Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt .",
+      "salary": "$80,000",
+      "location": "Chicago",
+      "latitude": 41.8781,
+      "longitude": -87.6298
+    },
+    {
+      "image": "./job-img/medical-team.png",
+      "title": "Accountant",
+      "description": "Lorem ipsum dolor sit amet Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt Sed do eiusmod tempor incididunt .",
+      "salary": "$65,000",
+      "location": "Houston",
+      "latitude": 29.7604,
+      "longitude": -95.3698
+    }
+  ]
+  

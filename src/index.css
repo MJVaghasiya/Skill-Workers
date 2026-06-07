@@ -1,0 +1,351 @@
+@import "tailwindcss";
+
+/* ─── FONT FACES ──────────────────────────────────────────────── */
+
+/* NotoSerif */
+@font-face {
+  font-family: "NotoSerif";
+  src: url("/font/NotoSerif/NotoSerif-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoSerif";
+  src: url("/font/NotoSerif/NotoSerif-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoSerif";
+  src: url("/font/NotoSerif/NotoSerif-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoSerif";
+  src: url("/font/NotoSerif/NotoSerif-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoSerif";
+  src: url("/font/NotoSerif/NotoSerif-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoSerif";
+  src: url("/font/NotoSerif/NotoSerif-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoSerif";
+  src: url("/font/NotoSerif/NotoSerif-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoSerif";
+  src: url("/font/NotoSerif/NotoSerif-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoSerif";
+  src: url("/font/NotoSerif/NotoSerif-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ScienceGothic */
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("/font/ScienceGothic/ScienceGothic-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("/font/ScienceGothic/ScienceGothic-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("/font/ScienceGothic/ScienceGothic-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("/font/ScienceGothic/ScienceGothic-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("/font/ScienceGothic/ScienceGothic-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("/font/ScienceGothic/ScienceGothic-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("/font/ScienceGothic/ScienceGothic-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("/font/ScienceGothic/ScienceGothic-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── THEME ───────────────────────────────────────────────────── */
+@theme {
+  /* Container */
+  --container-center: true;
+  --container-padding: 1rem;
+
+  /* Breakpoints */
+  --breakpoint-sm:  640px;
+  --breakpoint-md:  769px;
+  --breakpoint-lg:  992px;
+  --breakpoint-xl:  1199px;
+  --breakpoint-1xl: 1380px;
+  --breakpoint-2xl: 1600px;
+
+  /* Colors */
+  --color-primary:       #0B81F7;
+  --color-primary-light: #1FACEA;
+  --color-primary-dark:  #0660c4;
+  --color-bg:            #e0e5ec;
+  --color-surface:       #e0e5ec;
+  --color-text:          #2d3748;
+  --color-text-muted:    #718096;
+  --color-neu-dark:      #b8bec7;
+  --color-neu-light:     #ffffff;
+  --color-white:         #ffffff;
+
+  /* Fonts — ScienceGothic for headings, NotoSerif for body */
+  --font-sans:    "NotoSerif", serif;
+  --font-display: "ScienceGothic", sans-serif;
+
+  /* Shadows (registered so they can be used as CSS vars) */
+  --shadow-neu-out:    6px 6px 12px #b8bec7, -6px -6px 12px #ffffff;
+  --shadow-neu-in:     inset 4px 4px 8px #b8bec7, inset -4px -4px 8px #ffffff;
+  --shadow-neu-out-sm: 3px 3px 6px #b8bec7, -3px -3px 6px #ffffff;
+  --shadow-neu-out-lg: 10px 10px 20px #b8bec7, -10px -10px 20px #ffffff;
+  --shadow-neu-hover:  8px 8px 16px #b8bec7, -8px -8px 16px #ffffff;
+  --shadow-neu-btn:    4px 4px 8px #b8bec7, -4px -4px 8px #ffffff;
+  --shadow-neu-btn-in: inset 3px 3px 6px #b8bec7, inset -3px -3px 6px #ffffff;
+
+  /* ── Keyframes – ALL defined here in @theme ─────────────────── */
+  --animate-spin-slow:  spin-slow 20s linear infinite;
+  --animate-fade-up:    fade-up 0.7s ease forwards;
+  --animate-pulse-dot:  pulse-dot 2s ease-in-out infinite;
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { transform: scale(1);   opacity: 1; }
+    50%       { transform: scale(1.4); opacity: 0.6; }
+  }
+}
+
+/* ─── BASE LAYER ──────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    @apply box-border m-0 p-0;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-[#e0e5ec] text-[#2d3748] antialiased;
+    font-family: "NotoSerif", serif;
+  }
+
+  /* ── Headings: ScienceGothic display font ─────────────────── */
+  h1, .h1 {
+    @apply font-extrabold;
+    @apply 2xl:text-[64px] 1xl:text-[50px] xl:text-[45px] lg:text-[42px] md:text-[38px] text-[35px];
+    @apply 2xl:leading-[80px] 1xl:leading-[65px] xl:leading-[50px] md:leading-[45px] leading-[42px];
+    font-family: "ScienceGothic", sans-serif;
+  }
+  h2, .h2 {
+    @apply font-bold;
+    @apply 2xl:text-[56px] 1xl:text-[52px] xl:text-[48px] lg:text-[44px] md:text-[40px] sm:text-4xl text-[28px];
+    @apply 1xl:leading-[64px] lg:leading-[58px] sm:leading-[45px] leading-[38px];
+    font-family: "ScienceGothic", sans-serif;
+  }
+  h3, .h3 {
+    @apply font-bold;
+    @apply 2xl:text-[48px] 1xl:text-[44px] xl:text-[40px] lg:text-[36px] sm:text-[32px] text-2xl;
+    @apply 2xl:leading-[53px] md:leading-[47px] sm:leading-[40px] leading-8;
+    font-family: "ScienceGothic", sans-serif;
+  }
+  h4, .h4 {
+    @apply font-semibold;
+    @apply 2xl:text-[40px] 1xl:text-4xl xl:text-[31px] lg:text-[28px] text-[25px];
+    @apply 2xl:leading-[52px] 1xl:leading-[47px] lg:leading-[42px] leading-[30px];
+    font-family: "ScienceGothic", sans-serif;
+  }
+  h5, .h5 {
+    @apply font-semibold;
+    @apply 2xl:text-[35px] 1xl:text-[32px] xl:text-[28px] sm:text-[24px] text-[21px];
+    @apply 2xl:leading-[50px] sm:leading-[45px] leading-[28px];
+    font-family: "ScienceGothic", sans-serif;
+  }
+  h6, .h6 {
+    @apply font-semibold;
+    @apply 2xl:text-2xl lg:text-[20px] text-lg leading-[32px];
+    font-family: "ScienceGothic", sans-serif;
+  }
+
+  /* ── Body text: NotoSerif ─────────────────────────────────── */
+  p, .p {
+    @apply 2xl:text-xl xl:text-[17px] lg:text-base text-[15px];
+    @apply 1xl:leading-[32px] sm:leading-7 leading-6;
+  }
+  .p2 {
+    @apply 2xl:text-lg xl:text-base text-[15px] xl:leading-[28px] leading-6;
+  }
+
+  /* ── Links ────────────────────────────────────────────────── */
+  a {
+    @apply no-underline text-[#2d3748] transition-colors duration-300;
+    @apply hover:text-[#0B81F7] active:text-[#0B81F7] focus:text-[#0B81F7];
+  }
+
+  /* ── Underline animation ──────────────────────────────────── */
+  .underline-anim {
+    @apply relative inline-block;
+  }
+  .underline-anim::after {
+    @apply content-[''] absolute left-0 bottom-0 h-[2px] w-0 bg-current;
+    @apply transition-all duration-500 ease-in-out;
+  }
+  .underline-anim:hover::after {
+    @apply w-full;
+  }
+}
+
+/* ─── UTILITY LAYER ───────────────────────────────────────────── */
+@layer utilities {
+
+  /* ── Neumorphism surface states ───────────────────────────── */
+  .neu-out {
+    @apply bg-[#e0e5ec];
+    box-shadow: var(--shadow-neu-out);
+  }
+  .neu-in {
+    @apply bg-[#e0e5ec];
+    box-shadow: var(--shadow-neu-in);
+  }
+  .neu-out-sm {
+    @apply bg-[#e0e5ec];
+    box-shadow: var(--shadow-neu-out-sm);
+  }
+  .neu-out-lg {
+    @apply bg-[#e0e5ec];
+    box-shadow: var(--shadow-neu-out-lg);
+  }
+
+  /* ── Neumorphism hover lift ───────────────────────────────── */
+  .neu-hover {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .neu-hover:hover {
+    @apply -translate-y-0.5;
+    box-shadow: var(--shadow-neu-hover);
+  }
+
+  /* ── Neumorphism flat button ──────────────────────────────── */
+  .neu-btn {
+    @apply bg-[#e0e5ec] transition-all duration-200 ease-in-out;
+    box-shadow: var(--shadow-neu-btn);
+  }
+  .neu-btn:hover {
+    box-shadow: var(--shadow-neu-out);
+  }
+  .neu-btn:active {
+    box-shadow: var(--shadow-neu-btn-in);
+  }
+
+  /* ── Neumorphism primary (gradient) button ────────────────── */
+  .neu-btn-primary {
+    @apply transition-all duration-200 ease-in-out;
+    background: linear-gradient(145deg, #1a92ff, #0b71d4);
+    box-shadow: var(--shadow-neu-btn);
+  }
+  .neu-btn-primary:hover {
+    @apply -translate-y-px;
+    box-shadow: var(--shadow-neu-out);
+  }
+  .neu-btn-primary:active {
+    @apply translate-y-0;
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ── Neumorphism input (inset) ────────────────────────────── */
+  .neu-input {
+    @apply bg-[#e0e5ec] border-none outline-none;
+    box-shadow: var(--shadow-neu-in);
+  }
+  .neu-input:focus {
+    box-shadow: inset 4px 4px 9px #b8bec7, inset -4px -4px 9px #ffffff;
+  }
+
+  /* ── Gradient text ────────────────────────────────────────── */
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #0B81F7, #1FACEA);
+  }
+
+  /* ── Gradient background ──────────────────────────────────── */
+  .bg-primary-gradient {
+    background: linear-gradient(135deg, #0B81F7, #1FACEA);
+  }
+
+  /* ── Animations (reference @theme keyframes) ──────────────── */
+  .spin-slow {
+    animation: var(--animate-spin-slow);
+  }
+  .fade-up {
+    animation: var(--animate-fade-up);
+  }
+  .pulse-dot {
+    animation: var(--animate-pulse-dot);
+  }
+}
