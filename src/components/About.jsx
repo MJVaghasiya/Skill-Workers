@@ -2,9 +2,9 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import PageHeader from "./PageHeader";
-import img1 from "../../dist/assets/Happy-Clients.webp";
-import img2 from "../../dist/assets/About1.webp";
-import img3 from "../../dist/assets/About2.webp";
+import img1 from "/assets/Happy-Clients.webp";
+import img2 from "/assets/About1.webp";
+import img3 from "/assets/About2.webp";
 import { IoMdCheckmark } from "react-icons/io";
 import { RiGroupLine, RiHeartLine, RiShieldCheckLine, RiAwardLine } from "react-icons/ri";
 

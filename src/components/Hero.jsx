@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import heroBanner from "../../dist/assets/hero-banner.webp";
+import heroBanner from "/assets/hero-banner.webp";
 import {
   RiCustomerService2Fill,
   RiMapPinLine,

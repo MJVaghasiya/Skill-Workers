@@ -1,5 +1,5 @@
 import React from "react";
-import goalImg from "../../dist/assets/team.webp";
+import goalImg from "/assets/team.webp";
 // import { IoMdCheckmark } from "react-icons/io";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";

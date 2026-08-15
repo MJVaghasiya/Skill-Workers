@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import PageHeader from "./PageHeader";
-import img1 from "../../dist/assets/our-services.jpeg";
+import img1 from "/assets/our-services.jpeg";
 import {
   PiFlowerFill,
   PiStarFourFill,

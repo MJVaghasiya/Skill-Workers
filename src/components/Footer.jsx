@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logoImg from "../../dist/assets/footer-logo.svg";
+import logoImg from "/assets/footer-logo.svg";
 
 import {
   FaFacebookF,

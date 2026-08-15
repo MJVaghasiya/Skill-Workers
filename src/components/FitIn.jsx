@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import img1 from "../../dist/assets/Care-at-home.webp";
-import img2 from "../../dist/assets/personal-support-worker.webp";
-import img3 from "../../dist/assets/hospital-service.webp";
-import img4 from "../../dist/assets/nurse1.webp";
-import img5 from "../../dist/assets/domestic-worker.webp";
-import img6 from "../../dist/assets/chef.webp";
-import img7 from "../../dist/assets/clining.webp";
-import img8 from "../../dist/assets/delievery-driver.webp";
-import img9 from "../../dist/assets/Shop-service.webp";
+import img1 from "/assets/Care-at-home.webp";
+import img2 from "/assets/personal-support-worker.webp";
+import img3 from "/assets/hospital-service.webp";
+import img4 from "/assets/nurse1.webp";
+import img5 from "/assets/domestic-worker.webp";
+import img6 from "/assets/chef.webp";
+import img7 from "/assets/clining.webp";
+import img8 from "/assets/delievery-driver.webp";
+import img9 from "/assets/Shop-service.webp";
 import { FaArrowRight } from "react-icons/fa";
 
 const roles = [

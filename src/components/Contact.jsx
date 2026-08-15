@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import PageHeader from "./PageHeader";
-import logoImg from "../../dist/assets/hero-banner.webp";
+import logoImg from "/assets/hero-banner.webp";
 import {
   IoCallSharp,
   IoMail,
