@@ -42,29 +42,27 @@ const Footer = () => {
   return (
     <footer>
       <div className="container">
-        <div className="neu-out rounded-3xl p-8 lg:p-12 mb-8">
-          <div className="flex items-start justify-between gap-10">
+        <div className="neu-out rounded-3xl p-6 sm:p-8 lg:p-12 mb-8">
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-[1.4fr_0.7fr_0.8fr_1.5fr] items-start">
 
             {/* Brand */}
-            <div className="lg:pr-10 w-[30%]">
+            <div className="w-full xl:pr-8">
               <div className="flex items-center gap-3 mb-5">
-                <div className="flex items-center justify-center">
-                  <img src={logoImg} alt="Skill Workers" className="object-contain w-70" />
-                </div>
+                <img src={logoImg} alt="Skill Workers" className="object-contain w-52 sm:w-60 lg:w-70" />
               </div>
-            
-                <p className="p2 font-bold text-primary mb-2">EVERY JOB MATTERS.</p>
-                <p className="text-slate-100 2xl:text-[15px] text-[14px] leading-7 mb-7.5 w-[90%]">
+
+              <p className="p2 font-bold text-primary mb-2">EVERY JOB MATTERS.</p>
+              <p className="text-slate-100 2xl:text-[15px] text-[14px] leading-7 mb-7 w-full max-w-[90%]">
                 Empowering lives through meaningful work across the UK.
               </p>
-              {/* Socials */}
-              <div className="flex gap-4 flex-wrap">
+
+              <div className="flex gap-3 sm:gap-4 flex-wrap">
                 {socials.map(({ icon, href, label }) => (
                   <a
                     key={label}
                     href={href}
                     aria-label={label}
-                    className="size-11 rounded-xl neu-out-sm flex items-center justify-center text-slate-100 hover:text-primary transition-colors duration-300"
+                    className="size-10 sm:size-11 rounded-xl neu-out-sm flex items-center justify-center text-slate-100 hover:text-primary transition-colors duration-300"
                   >
                     {icon}
                   </a>
@@ -73,7 +71,7 @@ const Footer = () => {
             </div>
 
             {/* Menu */}
-            <div className="w-[15%]">
+            <div className="w-full">
               <p className="text-black-100 uppercase tracking-widest mb-5 font-bold">Menu</p>
               <ul className="space-y-3">
                 {[
@@ -96,7 +94,7 @@ const Footer = () => {
             </div>
 
             {/* Services */}
-            <div className="w-[25%]">
+            <div className="w-full">
               <p className="text-black-100 uppercase tracking-widest mb-5 font-bold">Services</p>
               <ul className="space-y-3">
                 {[
@@ -117,36 +115,35 @@ const Footer = () => {
             </div>
 
             {/* Contact + Newsletter */}
-            <div className="w-[30%]">
+            <div className="w-full">
               <p className="text-black-100 uppercase tracking-widest mb-5 font-bold">Get In Touch</p>
               <ul className="space-y-3 mb-7">
                 <li className="flex items-center gap-3">
-                    <IoCallOutline className="text-primary text-xl" />
-                  <a href="tel:02039852252" className="text-slate-100 p2 hover:text-primary">
+                  <IoCallOutline className="text-primary text-xl shrink-0" />
+                  <a href="tel:02039852252" className="text-slate-100 p2 hover:text-primary break-all">
                     02039852252
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
-                    <IoMailOutline className="text-primary text-xl" />
-                  <a href="mailto:info@skillworkers.co.uk" className="text-slate-100 p2 hover:text-primary">
+                  <IoMailOutline className="text-primary text-xl shrink-0" />
+                  <a href="mailto:info@skillworkers.co.uk" className="text-slate-100 p2 hover:text-primary break-all">
                     info@skillworkers.co.uk
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
-                    <IoLocationOutline className="text-primary text-xl" />
+                  <IoLocationOutline className="text-primary text-xl shrink-0" />
                   <span className="text-slate-100 p2">United Kingdom</span>
                 </li>
               </ul>
 
-              {/* Newsletter */}
               <p className="p3 text-black-100 uppercase tracking-widest mb-3 font-bold">Newsletter</p>
               {subscribed ? (
                 <div className="neu-in rounded-xl px-4 py-3 text-primary-light p3 font-semibold">
                   ✓ Subscribed! Thank you.
                 </div>
               ) : (
-                <form onSubmit={handleSubscribe} className="flex flex-col gap-1">
-                  <div className="flex gap-2">
+                <form onSubmit={handleSubscribe} className="flex flex-col gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <input
                       type="email"
                       value={email}
@@ -155,11 +152,11 @@ const Footer = () => {
                         if (emailError) setEmailError("");
                       }}
                       placeholder="Your email..."
-                      className="neu-input flex-1 px-4 py-2.5 rounded-xl p3 text-black-100 placeholder-slate-100 focus:outline-none"
+                      className="neu-input flex-1 px-4 py-2.5 rounded-xl p3 text-black-100 placeholder-slate-100 focus:outline-none w-full"
                     />
                     <button
                       type="submit"
-                      className="btn neu-btn-primary px-4 py-2.5 "
+                      className="btn neu-btn-primary px-4 py-2.5 w-full sm:w-auto"
                     >
                       Submit
                     </button>
