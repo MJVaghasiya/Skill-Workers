@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import PageHeader from "./PageHeader";
-import img1 from "../assets/our-services.jpeg";
+import img1 from "../../dist/assets/our-services.jpeg";
 import {
   PiFlowerFill,
   PiStarFourFill,
@@ -19,7 +19,7 @@ const serviceCards = [
     description:
       "We offer only the best healthcare, support workers and related services to our clients. Our team is dedicated to providing excellent quality services that matter to our visitors, customers and clients.",
     color: "#0B81F7",
-    gradient: "from-[#1FACEA] to-[#0B81F7]",
+    gradient: "from-primary-light to-primary",
   },
   {
     icon: <PiStarFourFill />,
@@ -65,7 +65,7 @@ const serviceCards = [
 
 const OurServices = () => {
   return (
-    <div className="bg-[#e0e5ec] min-h-screen">
+    <div className="min-h-screen pt-40">
       <Navbar />
       <PageHeader title="Services of Skill Workers" breadcrumb="Services" />
 
@@ -74,14 +74,15 @@ const OurServices = () => {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-5 py-2 mb-6">
-                <span className="w-2 h-2 rounded-full bg-[#0B81F7]" />
-                <span className="text-sm font-semibold text-[#0B81F7] uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-5 py-2 mb-8">
+                <span className="w-2 h-2 rounded-full bg-primary" />
+                <span className="p3 font-medium text-primary">
                   What We Offer
                 </span>
               </div>
-              <h2 className="text-[#2d3748] mb-5">Our Services</h2>
-              <p className="text-[#718096]">
+
+              <h2 className="text-black-100 mb-5">Our Services</h2>
+              <p className="text-slate-100">
                 At SkillWorkers, we offer guaranteed excellence in healthcare support,
                 support workers and related services. We pride ourselves on being different from the
                 competition by providing unique and valuable aspects that differentiate us from others.
@@ -98,7 +99,7 @@ const OurServices = () => {
               <div key={title} className="neu-out rounded-2xl p-7 neu-hover group">
                 {/* Icon */}
                 <div
-                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110`}
+                  className={`w-16 h-16 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110`}
                   style={{ boxShadow: `0 8px 24px ${color}33` }}
                 >
                   <span className="text-white text-2xl">{icon}</span>
@@ -108,8 +109,8 @@ const OurServices = () => {
                   className="h-0.5 w-10 rounded-full mb-4"
                   style={{ background: `linear-gradient(to right, ${color}, transparent)` }}
                 />
-                <h5 className="text-[#2d3748] mb-3">{title}</h5>
-                <p className="text-[#718096] p2">{description}</p>
+                <h5 className="text-black-100 mb-3">{title}</h5>
+                <p className="text-slate-100 p2">{description}</p>
               </div>
             ))}
           </div>
@@ -120,20 +121,19 @@ const OurServices = () => {
       <section className="py-16">
         <div className="container">
           <div className="neu-out rounded-3xl p-10 lg:p-14 text-center">
-            <h3 className="text-[#2d3748] mb-4">
+            <h3 className="text-black-100 mb-5.5">
               Ready to Find Your{" "}
               <span className="text-gradient-primary">Perfect Role?</span>
             </h3>
-            <p className="text-[#718096] max-w-xl mx-auto mb-8">
+            <p className="text-slate-100 max-w-xl mx-auto mb-8">
               Join hundreds of workers who have found meaningful employment through SkillWorkers.
             </p>
             <a
               href="https://skillworkers.co.uk/candidate/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 neu-btn-primary text-white px-10 py-4 rounded-2xl font-semibold text-base hover:text-white transition-all duration-300"
-            >
-              Apply Now →
+                className="btn neu-btn-primary transition-all duration-300 w-fit mx-auto">
+              Apply Now 
             </a>
           </div>
         </div>

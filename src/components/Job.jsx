@@ -51,7 +51,7 @@ const Job = () => {
   };
 
   return (
-    <div className="bg-[#e0e5ec] min-h-screen">
+    <div className="min-h-screen pt-40 ">
       <Navbar />
       <PageHeader title="Job Search" breadcrumb="Job Search" />
 
@@ -62,35 +62,35 @@ const Job = () => {
           <div className="neu-out rounded-2xl p-6 mb-10">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
               <div className="lg:col-span-1">
-                <label className="block text-xs font-bold text-[#718096] uppercase tracking-wider mb-2">
+                <label className="block text-xs font-bold text-slate-100 uppercase tracking-wider mb-2">
                   Role / Keyword
                 </label>
                 <div className="relative">
-                  <IoMdPerson className="absolute left-4 top-1/2 -translate-y-1/2 text-[#0B81F7] text-lg" />
+                  <IoMdPerson className="absolute left-4 top-1/2 -translate-y-1/2 text-primary text-lg" />
                   <input
                     type="text"
                     placeholder="Keyword, Role, Skill..."
                     value={titleQuery}
                     onChange={(e) => setTitleQuery(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleFilter()}
-                    className="neu-input w-full pl-11 pr-4 py-3.5 rounded-xl text-sm text-[#2d3748] placeholder-[#b8bec7] focus:outline-none"
+                    className="neu-input w-full pl-11 pr-4 py-3.5 rounded-xl text-sm text-black-100 placeholder-slate-200 focus:outline-none"
                   />
                 </div>
               </div>
 
               <div className="lg:col-span-1">
-                <label className="block text-xs font-bold text-[#718096] uppercase tracking-wider mb-2">
+                <label className="block text-xs font-bold text-slate-100 uppercase tracking-wider mb-2">
                   Location
                 </label>
                 <div className="relative">
-                  <FaLocationArrow className="absolute left-4 top-1/2 -translate-y-1/2 text-[#0B81F7] text-sm" />
+                  <FaLocationArrow className="absolute left-4 top-1/2 -translate-y-1/2 text-primary text-sm" />
                   <input
                     type="text"
                     placeholder="City, Region..."
                     value={locationQuery}
                     onChange={(e) => setLocationQuery(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleFilter()}
-                    className="neu-input w-full pl-11 pr-4 py-3.5 rounded-xl text-sm text-[#2d3748] placeholder-[#b8bec7] focus:outline-none"
+                    className="neu-input w-full pl-11 pr-4 py-3.5 rounded-xl text-sm text-black-100 placeholder-slate-200 focus:outline-none"
                   />
                 </div>
               </div>
@@ -104,7 +104,7 @@ const Job = () => {
                 </button>
                 <button
                   onClick={clearFilters}
-                  className="neu-btn px-5 py-3.5 rounded-xl font-semibold text-sm text-[#718096] hover:text-[#D62C35] flex items-center gap-2 transition-all duration-300"
+                  className="neu-btn px-5 py-3.5 rounded-xl font-semibold text-sm text-slate-100 hover:text-[#D62C35] flex items-center gap-2 transition-all duration-300"
                 >
                   <MdOutlineClear className="text-base" /> Clear
                 </button>
@@ -114,8 +114,8 @@ const Job = () => {
 
           {/* Results count */}
           <div className="mb-6 flex items-center justify-between">
-            <p className="text-[#718096] font-medium">
-              <span className="text-[#0B81F7] font-bold">{filteredData.length}</span> jobs found
+            <p className="text-slate-100 font-medium">
+              <span className="text-primary font-bold">{filteredData.length}</span> jobs found
             </p>
           </div>
 
@@ -135,9 +135,9 @@ const Job = () => {
           {/* No results */}
           {!loading && filteredData.length === 0 && (
             <div className="neu-out rounded-3xl p-16 text-center">
-              <PiMagnifyingGlass className="text-5xl text-[#b8bec7] mx-auto mb-4" />
-              <h4 className="text-[#2d3748] mb-2">No Jobs Found</h4>
-              <p className="text-[#718096]">Try adjusting your search criteria.</p>
+              <PiMagnifyingGlass className="text-5xl text-slate-200 mx-auto mb-4" />
+              <h4 className="text-black-100 mb-2">No Jobs Found</h4>
+              <p className="text-slate-100">Try adjusting your search criteria.</p>
               <button onClick={clearFilters} className="mt-6 neu-btn-primary text-white px-8 py-3 rounded-xl font-semibold hover:text-white">
                 Clear Filters
               </button>
@@ -163,25 +163,25 @@ const Job = () => {
                     <div className="md:col-span-2 p-6 flex flex-col justify-between">
                       <div>
                         <div className="flex flex-wrap gap-2 mb-3">
-                          <span className="neu-out-sm rounded-lg px-3 py-1 text-xs font-semibold text-[#0B81F7]">
+                          <span className="neu-out-sm rounded-lg px-3 py-1 text-xs font-semibold text-primary">
                             {item.title}
                           </span>
                         </div>
                         <div className="space-y-2 mb-4">
-                          <div className="flex items-center gap-2 text-sm text-[#718096]">
-                            <RiMapPinLine className="text-[#0B81F7]" />
+                          <div className="flex items-center gap-2 text-sm text-slate-100">
+                            <RiMapPinLine className="text-primary" />
                             <span>{item.location}</span>
                           </div>
-                          <div className="flex items-center gap-2 text-sm text-[#718096]">
+                          <div className="flex items-center gap-2 text-sm text-slate-100">
                             <RiMoneyDollarCircleLine className="text-[#36D97C]" />
                             <span>{item.salary}</span>
                           </div>
-                          <div className="flex items-center gap-2 text-sm text-[#718096]">
+                          <div className="flex items-center gap-2 text-sm text-slate-100">
                             <RiBriefcaseLine className="text-[#9B68E6]" />
                             <span>Full Time</span>
                           </div>
                         </div>
-                        <p className="text-[#718096] p2 line-clamp-2">{item.description}</p>
+                        <p className="text-slate-100 p2 line-clamp-2">{item.description}</p>
                       </div>
 
                       <div className="mt-5 flex gap-3">
@@ -193,14 +193,14 @@ const Job = () => {
                         >
                           Apply Now <FaArrowRight className="text-xs" />
                         </a>
-                        <button className="neu-btn px-6 py-2.5 rounded-xl text-sm font-semibold text-[#4a5568] hover:text-[#0B81F7] transition-all duration-300">
+                        <button className="neu-btn px-6 py-2.5 rounded-xl text-sm font-semibold text-[#4a5568] hover:text-primary transition-all duration-300">
                           View Details
                         </button>
                       </div>
                     </div>
 
                     {/* Map */}
-                    <div className="md:col-span-1 h-48 md:h-auto min-h-[200px]">
+                    <div className="md:col-span-1 h-48 md:h-auto min-h-50">
                       <iframe
                         title={`Map: ${item.location}`}
                         className="w-full h-full"

@@ -1,5 +1,79 @@
 @import "tailwindcss";
 
+/* ─── THEME ───────────────────────────────────────────────────── */
+@theme {
+  /* Container */
+  --container-center: true;
+  --container-padding: 1rem;
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 769px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1199px;
+  --breakpoint-1xl: 1380px;
+  --breakpoint-2xl: 1600px;
+
+  /* Colors */
+  --color-primary: #0b81f7;
+  --color-primary-light: #1facea;
+  /* --color-primary-dark:  #0660c4; */
+  --color-surface-bg:       #e0e5ec;
+  --color-black-100: #2d3748;
+  --color-slate-100: #718096;
+  --color-slate-200: #b8bec7;
+  /* --color-neu-light:     #ffffff; */
+  /* --color-white:         #ffffff; */
+
+  /* Fonts — ScienceGothic for headings, NotoSerif for body */
+  --font-sans: "NotoSerif", serif;
+  --font-display: "ScienceGothic", sans-serif;
+
+  /* Shadows (registered so they can be used as CSS vars) */
+  --shadow-neu-out: 6px 6px 12px #b8bec7, -6px -6px 12px #ffffff;
+  --shadow-neu-in: inset 4px 4px 8px #b8bec7, inset -4px -4px 8px #ffffff;
+  --shadow-neu-out-sm: 3px 3px 6px #b8bec7, -3px -3px 6px #ffffff;
+  --shadow-neu-out-lg: 10px 10px 20px #b8bec7, -10px -10px 20px #ffffff;
+  --shadow-neu-hover: 8px 8px 16px #b8bec7, -8px -8px 16px #ffffff;
+  --shadow-neu-btn: 4px 4px 8px #b8bec7, -4px -4px 8px #ffffff;
+  --shadow-neu-btn-in: inset 3px 3px 6px #b8bec7, inset -3px -3px 6px #ffffff;
+
+  /* ── Keyframes – ALL defined here in @theme ─────────────────── */
+  --animate-spin-slow: spin-slow 20s linear infinite;
+  --animate-fade-up: fade-up 0.7s ease forwards;
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.4);
+      opacity: 0.6;
+    }
+  }
+}
+
 /* ─── FONT FACES ──────────────────────────────────────────────── */
 
 /* NotoSerif */
@@ -125,127 +199,68 @@
   font-display: swap;
 }
 
-/* ─── THEME ───────────────────────────────────────────────────── */
-@theme {
-  /* Container */
-  --container-center: true;
-  --container-padding: 1rem;
-
-  /* Breakpoints */
-  --breakpoint-sm:  640px;
-  --breakpoint-md:  769px;
-  --breakpoint-lg:  992px;
-  --breakpoint-xl:  1199px;
-  --breakpoint-1xl: 1380px;
-  --breakpoint-2xl: 1600px;
-
-  /* Colors */
-  --color-primary:       #0B81F7;
-  --color-primary-light: #1FACEA;
-  --color-primary-dark:  #0660c4;
-  --color-bg:            #e0e5ec;
-  --color-surface:       #e0e5ec;
-  --color-text:          #2d3748;
-  --color-text-muted:    #718096;
-  --color-neu-dark:      #b8bec7;
-  --color-neu-light:     #ffffff;
-  --color-white:         #ffffff;
-
-  /* Fonts — ScienceGothic for headings, NotoSerif for body */
-  --font-sans:    "NotoSerif", serif;
-  --font-display: "ScienceGothic", sans-serif;
-
-  /* Shadows (registered so they can be used as CSS vars) */
-  --shadow-neu-out:    6px 6px 12px #b8bec7, -6px -6px 12px #ffffff;
-  --shadow-neu-in:     inset 4px 4px 8px #b8bec7, inset -4px -4px 8px #ffffff;
-  --shadow-neu-out-sm: 3px 3px 6px #b8bec7, -3px -3px 6px #ffffff;
-  --shadow-neu-out-lg: 10px 10px 20px #b8bec7, -10px -10px 20px #ffffff;
-  --shadow-neu-hover:  8px 8px 16px #b8bec7, -8px -8px 16px #ffffff;
-  --shadow-neu-btn:    4px 4px 8px #b8bec7, -4px -4px 8px #ffffff;
-  --shadow-neu-btn-in: inset 3px 3px 6px #b8bec7, inset -3px -3px 6px #ffffff;
-
-  /* ── Keyframes – ALL defined here in @theme ─────────────────── */
-  --animate-spin-slow:  spin-slow 20s linear infinite;
-  --animate-fade-up:    fade-up 0.7s ease forwards;
-  --animate-pulse-dot:  pulse-dot 2s ease-in-out infinite;
-
-  @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-  }
-  @keyframes fade-up {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes pulse-dot {
-    0%, 100% { transform: scale(1);   opacity: 1; }
-    50%       { transform: scale(1.4); opacity: 0.6; }
-  }
-}
-
 /* ─── BASE LAYER ──────────────────────────────────────────────── */
 @layer base {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     @apply box-border m-0 p-0;
   }
   html {
     @apply scroll-smooth;
   }
   body {
-    @apply bg-[#e0e5ec] text-[#2d3748] antialiased;
+    @apply text-black-100 antialiased bg-surface-bg;
     font-family: "NotoSerif", serif;
   }
 
   /* ── Headings: ScienceGothic display font ─────────────────── */
-  h1, .h1 {
-    @apply font-extrabold;
-    @apply 2xl:text-[64px] 1xl:text-[50px] xl:text-[45px] lg:text-[42px] md:text-[38px] text-[35px];
-    @apply 2xl:leading-[80px] 1xl:leading-[65px] xl:leading-[50px] md:leading-[45px] leading-[42px];
+  h1,
+  .h1 {
+    @apply font-extrabold 2xl:text-[64px] 1xl:text-[50px] xl:text-[45px] lg:text-[42px] md:text-[38px] text-[35px] 2xl:leading-20 1xl:leading-[65px] xl:leading-12.5 md:leading-[45px] leading-10.5;
     font-family: "ScienceGothic", sans-serif;
   }
-  h2, .h2 {
-    @apply font-bold;
-    @apply 2xl:text-[56px] 1xl:text-[52px] xl:text-[48px] lg:text-[44px] md:text-[40px] sm:text-4xl text-[28px];
-    @apply 1xl:leading-[64px] lg:leading-[58px] sm:leading-[45px] leading-[38px];
+  h2,
+  .h2 {
+    @apply font-bold 2xl:text-[52px] 1xl:text-[50px] xl:text-[48px] lg:text-[44px] md:text-[40px] sm:text-4xl text-[28px] 1xl:leading-16 lg:leading-14.5 sm:leading-[45px] leading-9.5;
     font-family: "ScienceGothic", sans-serif;
   }
-  h3, .h3 {
-    @apply font-bold;
-    @apply 2xl:text-[48px] 1xl:text-[44px] xl:text-[40px] lg:text-[36px] sm:text-[32px] text-2xl;
-    @apply 2xl:leading-[53px] md:leading-[47px] sm:leading-[40px] leading-8;
+  h3,
+  .h3 {
+    @apply font-bold 2xl:text-[48px] 1xl:text-[44px] xl:text-[40px] lg:text-[36px] sm:text-[32px] text-2xl 2xl:leading-[53px] md:leading-[47px] sm:leading-10 leading-8;
     font-family: "ScienceGothic", sans-serif;
   }
-  h4, .h4 {
-    @apply font-semibold;
-    @apply 2xl:text-[40px] 1xl:text-4xl xl:text-[31px] lg:text-[28px] text-[25px];
-    @apply 2xl:leading-[52px] 1xl:leading-[47px] lg:leading-[42px] leading-[30px];
+  h4,
+  .h4 {
+    @apply font-semibold 2xl:text-[40px] 1xl:text-4xl xl:text-[31px] lg:text-[28px] text-[25px] 2xl:leading-13 1xl:leading-[47px] lg:leading-10.5 leading-7.5;
     font-family: "ScienceGothic", sans-serif;
   }
-  h5, .h5 {
-    @apply font-semibold;
-    @apply 2xl:text-[35px] 1xl:text-[32px] xl:text-[28px] sm:text-[24px] text-[21px];
-    @apply 2xl:leading-[50px] sm:leading-[45px] leading-[28px];
+  h5,
+  .h5 {
+    @apply font-semibold 2xl:text-[30px] 1xl:text-[28px] xl:text-[26px] sm:text-[22px] text-[18px] 2xl:leading-12.5 sm:leading-[45px] leading-7;
     font-family: "ScienceGothic", sans-serif;
   }
-  h6, .h6 {
-    @apply font-semibold;
-    @apply 2xl:text-2xl lg:text-[20px] text-lg leading-[32px];
+  h6,
+  .h6 {
+    @apply 2xl:text-2xl lg:text-[20px] text-lg leading-8;
     font-family: "ScienceGothic", sans-serif;
   }
 
   /* ── Body text: NotoSerif ─────────────────────────────────── */
-  p, .p {
-    @apply 2xl:text-xl xl:text-[17px] lg:text-base text-[15px];
-    @apply 1xl:leading-[32px] sm:leading-7 leading-6;
+  p,
+  .p {
+    @apply 2xl:text-xl xl:text-[17px] lg:text-base text-[15px] 1xl:leading-8 sm:leading-7 leading-6;
   }
   .p2 {
-    @apply 2xl:text-lg xl:text-base text-[15px] xl:leading-[28px] leading-6;
+    @apply 2xl:text-lg xl:text-base text-[15px] xl:leading-7.5 leading-6;
+  }
+  .p3 {
+    @apply 2xl:text-base md:text-sm text-[13px] leading-[150%] font-light;
   }
 
   /* ── Links ────────────────────────────────────────────────── */
   a {
-    @apply no-underline text-[#2d3748] transition-colors duration-300;
-    @apply hover:text-[#0B81F7] active:text-[#0B81F7] focus:text-[#0B81F7];
+    @apply no-underline text-black-100 transition-colors duration-300  hover:text-primary active:text-primary focus:text-primary;
   }
 
   /* ── Underline animation ──────────────────────────────────── */
@@ -253,35 +268,33 @@
     @apply relative inline-block;
   }
   .underline-anim::after {
-    @apply content-[''] absolute left-0 bottom-0 h-[2px] w-0 bg-current;
-    @apply transition-all duration-500 ease-in-out;
+    @apply content-[''] absolute left-0 bottom-0 h-0.5 w-0 bg-current transition-all duration-500 ease-in-out;
   }
   .underline-anim:hover::after {
     @apply w-full;
   }
-  .container{
+  .container {
     @apply mx-auto px-4 w-full;
   }
 }
 
 /* ─── UTILITY LAYER ───────────────────────────────────────────── */
-@layer utilities {
-
+@layer components {
   /* ── Neumorphism surface states ───────────────────────────── */
   .neu-out {
-    @apply bg-[#e0e5ec];
+    @apply bg-surface-bg;
     box-shadow: var(--shadow-neu-out);
   }
   .neu-in {
-    @apply bg-[#e0e5ec];
+    @apply bg-surface-bg;
     box-shadow: var(--shadow-neu-in);
   }
   .neu-out-sm {
-    @apply bg-[#e0e5ec];
+    @apply bg-surface-bg;
     box-shadow: var(--shadow-neu-out-sm);
   }
   .neu-out-lg {
-    @apply bg-[#e0e5ec];
+    @apply bg-surface-bg;
     box-shadow: var(--shadow-neu-out-lg);
   }
 
@@ -289,56 +302,41 @@
   .neu-hover {
     @apply transition-all duration-300 ease-in-out;
   }
-  .neu-hover:hover {
-    @apply -translate-y-0.5;
-    box-shadow: var(--shadow-neu-hover);
-  }
 
   /* ── Neumorphism flat button ──────────────────────────────── */
+  .btn {
+    @apply rounded-xl 2xl:text-lg xl:text-[15px] text-sm leading-6 font-normal tracking-normal 2xl:py-4 xl:py-3 lg:py-2.5 sm:py-2 py-[5px] 2xl:px-10 1xl:px-8.5 xl:px-7 sm:px-5 px-4 flex items-center justify-center whitespace-nowrap;
+  }
   .neu-btn {
-    @apply bg-[#e0e5ec] transition-all duration-200 ease-in-out;
+    @apply bg-surface-bg rounded-xl hover:shadow-neu-btn-in active:shadow-neu-btn-in focus:shadow-neu-btn-in transition-all duration-200 ease-in-out;
     box-shadow: var(--shadow-neu-btn);
-  }
-  .neu-btn:hover {
-    box-shadow: var(--shadow-neu-out);
-  }
-  .neu-btn:active {
-    box-shadow: var(--shadow-neu-btn-in);
   }
 
   /* ── Neumorphism primary (gradient) button ────────────────── */
   .neu-btn-primary {
-    @apply transition-all duration-200 ease-in-out;
-    background: linear-gradient(145deg, #1a92ff, #0b71d4);
-    box-shadow: var(--shadow-neu-btn);
-  }
-  .neu-btn-primary:hover {
-    @apply -translate-y-px;
-    box-shadow: var(--shadow-neu-out);
-  }
-  .neu-btn-primary:active {
-    @apply translate-y-0;
-    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2);
+    @apply transition-all duration-200 ease-in-out text-white bg-primary shadow-neu-btn hover:shadow-none hover:border-primary active:border-primary focus:border-primary border border-transparent active:border focus:border hover:text-primary active:text-primary focus:text-primary hover:bg-white focus:bg-white active:bg-white;
   }
 
   /* ── Neumorphism input (inset) ────────────────────────────── */
   .neu-input {
-    @apply bg-[#e0e5ec] border-none outline-none;
+    @apply bg-surface-bg border-none outline-none;
     box-shadow: var(--shadow-neu-in);
   }
   .neu-input:focus {
-    box-shadow: inset 4px 4px 9px #b8bec7, inset -4px -4px 9px #ffffff;
+    box-shadow:
+      inset 4px 4px 9px #b8bec7,
+      inset -4px -4px 9px #ffffff;
   }
 
   /* ── Gradient text ────────────────────────────────────────── */
   .text-gradient-primary {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #0B81F7, #1FACEA);
+    background-image: linear-gradient(135deg, #0b81f7, #1facea);
   }
 
   /* ── Gradient background ──────────────────────────────────── */
   .bg-primary-gradient {
-    background: linear-gradient(135deg, #0B81F7, #1FACEA);
+    background: linear-gradient(135deg, #0b81f7, #1facea);
   }
 
   /* ── Animations (reference @theme keyframes) ──────────────── */
@@ -350,5 +348,20 @@
   }
   .pulse-dot {
     animation: var(--animate-pulse-dot);
+  }
+  section{
+    @apply 2xl:pb-25 1xl:pb-22.5 lg:pb-20 md:pb-17 pb-12.5 bg-surface-bg;
+  }
+}
+
+@layer uilities {
+  .services-icon svg{
+    @apply w-8 h-auto;
+  }
+  .footer-social-icon{
+    @apply text-xl;
+  }
+  section.Toastify{
+    @apply p-0!;
   }
 }

@@ -1,64 +1,70 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logoImg from "../assets/Icon PNG.png";
+import logoImg from "../../dist/assets/footer-logo.svg";
+
 import {
   FaFacebookF,
-  FaTwitter,
   FaLinkedinIn,
   FaWhatsapp,
   FaTelegramPlane,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
 import { IoMailOutline, IoCallOutline, IoLocationOutline } from "react-icons/io5";
 
 const socials = [
-  { icon: <FaFacebookF />, href: "#", label: "Facebook" },
-  { icon: <FaTwitter />, href: "#", label: "Twitter" },
-  { icon: <FaLinkedinIn />, href: "#", label: "LinkedIn" },
-  { icon: <FaWhatsapp />, href: "#", label: "WhatsApp" },
-  { icon: <FaTelegramPlane />, href: "#", label: "Telegram" },
+  { icon: <FaFacebookF className="footer-social-icon"/>, href: "#", label: "Facebook" },
+  { icon: <FaXTwitter className="footer-social-icon"/>, href: "#", label: "Twitter" },
+  { icon: <FaLinkedinIn className="footer-social-icon"/>, href: "#", label: "LinkedIn" },
+  { icon: <FaWhatsapp className="footer-social-icon"/>, href: "#", label: "WhatsApp" },
+  { icon: <FaTelegramPlane className="footer-social-icon"/>, href: "#", label: "Telegram" },
 ];
 
 const Footer = () => {
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
   const handleSubscribe = (e) => {
     e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail("");
+    const trimmedEmail = email.trim();
+
+    if (!trimmedEmail) {
+      setEmailError("Enter your email");
+      return;
     }
+
+    setEmailError("");
+    setSubscribed(true);
+    setEmail("");
   };
 
   return (
-    <footer className="bg-[#e0e5ec] pt-16 pb-6">
+    <footer>
       <div className="container">
         <div className="neu-out rounded-3xl p-8 lg:p-12 mb-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="flex items-start justify-between gap-10">
 
             {/* Brand */}
-            <div className="lg:pr-10">
+            <div className="lg:pr-10 w-[30%]">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-12 h-12 rounded-xl neu-in flex items-center justify-center">
-                  <img src={logoImg} alt="Skill Workers" className="w-7 h-7 object-contain" />
+                <div className="flex items-center justify-center">
+                  <img src={logoImg} alt="Skill Workers" className="object-contain w-70" />
                 </div>
-                <span className="font-display font-bold text-2xl text-[#2d3748]">
-                  Skill<span className="text-[#0B81F7]">Workers</span>
-                </span>
               </div>
-              <p className="text-[#718096] text-[15px] leading-7 mb-6">
-                <span className="font-bold text-[#0B81F7]">EVERY JOB MATTERS.</span>
-                <br />
+            
+                <p className="p2 font-bold text-primary mb-2">EVERY JOB MATTERS.</p>
+                <p className="text-slate-100 2xl:text-[15px] text-[14px] leading-7 mb-7.5 w-[90%]">
                 Empowering lives through meaningful work across the UK.
               </p>
               {/* Socials */}
-              <div className="flex gap-2 flex-wrap">
+              <div className="flex gap-4 flex-wrap">
                 {socials.map(({ icon, href, label }) => (
                   <a
                     key={label}
                     href={href}
                     aria-label={label}
-                    className="w-9 h-9 rounded-xl neu-out-sm flex items-center justify-center text-[#718096] hover:text-[#0B81F7] transition-colors duration-300"
+                    className="size-11 rounded-xl neu-out-sm flex items-center justify-center text-slate-100 hover:text-primary transition-colors duration-300"
                   >
                     {icon}
                   </a>
@@ -67,8 +73,8 @@ const Footer = () => {
             </div>
 
             {/* Menu */}
-            <div>
-              <p className="text-[#2d3748] uppercase tracking-widest mb-5 font-bold text-base">Menu</p>
+            <div className="w-[15%]">
+              <p className="text-black-100 uppercase tracking-widest mb-5 font-bold">Menu</p>
               <ul className="space-y-3">
                 {[
                   { to: "/", label: "Home" },
@@ -80,7 +86,7 @@ const Footer = () => {
                   <li key={to}>
                     <Link
                       to={to}
-                      className="text-[#718096] hover:text-[#0B81F7] transition-colors duration-300 p2 underline-anim"
+                      className="text-slate-100 hover:text-primary transition-colors duration-300 p2 underline-anim"
                     >
                       {label}
                     </Link>
@@ -90,8 +96,8 @@ const Footer = () => {
             </div>
 
             {/* Services */}
-            <div>
-              <p className="text-[#2d3748] uppercase tracking-widest mb-5 font-bold text-base">Services</p>
+            <div className="w-[25%]">
+              <p className="text-black-100 uppercase tracking-widest mb-5 font-bold">Services</p>
               <ul className="space-y-3">
                 {[
                   "Health Care Assistance",
@@ -102,7 +108,7 @@ const Footer = () => {
                   "Training",
                 ].map((s) => (
                   <li key={s}>
-                    <span className="text-[#718096] p2 hover:text-[#0B81F7] transition-colors duration-300 cursor-pointer underline-anim">
+                    <span className="text-slate-100 p2 hover:text-primary transition-colors duration-300 cursor-pointer underline-anim">
                       {s}
                     </span>
                   </li>
@@ -111,55 +117,56 @@ const Footer = () => {
             </div>
 
             {/* Contact + Newsletter */}
-            <div>
-              <p className="text-[#2d3748] uppercase tracking-widest mb-5 font-bold text-base">Get In Touch</p>
+            <div className="w-[30%]">
+              <p className="text-black-100 uppercase tracking-widest mb-5 font-bold">Get In Touch</p>
               <ul className="space-y-3 mb-7">
                 <li className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg neu-in flex items-center justify-center flex-shrink-0">
-                    <IoCallOutline className="text-[#0B81F7] text-sm" />
-                  </div>
-                  <a href="tel:02039852252" className="text-[#718096] p2 hover:text-[#0B81F7]">
+                    <IoCallOutline className="text-primary text-xl" />
+                  <a href="tel:02039852252" className="text-slate-100 p2 hover:text-primary">
                     02039852252
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg neu-in flex items-center justify-center flex-shrink-0">
-                    <IoMailOutline className="text-[#0B81F7] text-sm" />
-                  </div>
-                  <a href="mailto:info@skillworkers.co.uk" className="text-[#718096] p2 hover:text-[#0B81F7]">
+                    <IoMailOutline className="text-primary text-xl" />
+                  <a href="mailto:info@skillworkers.co.uk" className="text-slate-100 p2 hover:text-primary">
                     info@skillworkers.co.uk
                   </a>
                 </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg neu-in flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <IoLocationOutline className="text-[#0B81F7] text-sm" />
-                  </div>
-                  <span className="text-[#718096] p2">United Kingdom</span>
+                <li className="flex items-center gap-3">
+                    <IoLocationOutline className="text-primary text-xl" />
+                  <span className="text-slate-100 p2">United Kingdom</span>
                 </li>
               </ul>
 
               {/* Newsletter */}
-              <p className="text-[#2d3748] uppercase tracking-widest mb-3 font-bold text-base">Newsletter</p>
+              <p className="p3 text-black-100 uppercase tracking-widest mb-3 font-bold">Newsletter</p>
               {subscribed ? (
-                <div className="neu-in rounded-xl px-4 py-3 text-[#36D97C] text-sm font-semibold">
+                <div className="neu-in rounded-xl px-4 py-3 text-primary-light p3 font-semibold">
                   ✓ Subscribed! Thank you.
                 </div>
               ) : (
-                <form onSubmit={handleSubscribe} className="flex gap-2">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Your email..."
-                    className="neu-input flex-1 px-4 py-2.5 rounded-xl text-sm text-[#2d3748] placeholder-[#b8bec7] focus:outline-none"
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="neu-btn-primary text-white px-4 py-2.5 rounded-xl text-sm font-semibold hover:text-white transition-all duration-300"
-                  >
-                    OK
-                  </button>
+                <form onSubmit={handleSubscribe} className="flex flex-col gap-1">
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (emailError) setEmailError("");
+                      }}
+                      placeholder="Your email..."
+                      className="neu-input flex-1 px-4 py-2.5 rounded-xl p3 text-black-100 placeholder-slate-100 focus:outline-none"
+                    />
+                    <button
+                      type="submit"
+                      className="btn neu-btn-primary px-4 py-2.5 "
+                    >
+                      Submit
+                    </button>
+                  </div>
+                  {emailError && (
+                    <p className="text-red-500 text-sm">{emailError}</p>
+                  )}
                 </form>
               )}
             </div>
@@ -168,10 +175,10 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-2">
-          <p className="text-[#718096] text-sm">
+          <p className="text-slate-100 text-sm">
             © {new Date().getFullYear()} SkillWorkers. All rights reserved.
           </p>
-          <p className="text-[#718096] text-sm">
+          <p className="text-slate-100 text-sm">
             Made with ❤ in the UK
           </p>
         </div>

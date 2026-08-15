@@ -8,7 +8,7 @@ import Footer from "./Footer";
 
 const Home = () => {
   return (
-    <div className="bg-[#e0e5ec] min-h-screen">
+    <div className="min-h-screen pt-[130px]">
       <Navbar />
       <Hero />
       <Services />

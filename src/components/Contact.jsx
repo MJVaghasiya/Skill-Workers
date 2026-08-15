@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import PageHeader from "./PageHeader";
-import logoImg from "../assets/Icon PNG.png";
+import logoImg from "../../dist/assets/hero-banner.webp";
 import {
   IoCallSharp,
   IoMail,
@@ -26,7 +26,7 @@ const contactInfo = [
     value: "02039852252",
     href: "tel:02039852252",
     color: "#0B81F7",
-    gradient: "from-[#1FACEA] to-[#0B81F7]",
+    gradient: "from-primary-light to-primary",
   },
   {
     icon: <IoMail />,
@@ -63,20 +63,50 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    if (errors[name]) {
+      setErrors({ ...errors, [name]: "" });
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "Enter your first name";
+    }
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Enter your last name";
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = "Enter your email";
+    }
+    if (!formData.phoneNumber.trim()) {
+      newErrors.phoneNumber = "Enter your phone number";
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = "Enter your message";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     setLoading(true);
     emailjs
       .send("service_ce4ys97", "template_3ylrcpl", formData, "T_nEBjQvl28OUWv5U")
       .then(() => {
         toast.success("Message sent successfully!", { position: "top-center" });
         setFormData({ firstName: "", lastName: "", email: "", phoneNumber: "", message: "" });
+        setErrors({});
       })
       .catch(() => {
         toast.error("Failed to send message. Please try again.", { position: "top-right" });
@@ -85,13 +115,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-[#e0e5ec] min-h-screen">
+    <div className="min-h-screen pt-40 ">
       <Navbar />
       <ToastContainer />
       <PageHeader title="Contact Skill Workers" breadcrumb="Contact Us" />
 
       {/* Contact Cards */}
-      <section className="py-10">
+      <section>
         <div className="container">
           <div className="grid sm:grid-cols-3 gap-5 mb-14">
             {contactInfo.map(({ icon, label, value, href, gradient, color }) => (
@@ -101,16 +131,16 @@ const Contact = () => {
                 className="neu-out rounded-2xl p-6 flex items-center gap-4 neu-hover group hover:text-inherit"
               >
                 <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110`}
+                  className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110`}
                   style={{ boxShadow: `0 6px 16px ${color}33` }}
                 >
                   <span className="text-white text-xl">{icon}</span>
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-[#718096] uppercase tracking-wider mb-0.5">
+                  <div className="text-xs font-bold text-slate-100 uppercase tracking-wider mb-0.5">
                     {label}
                   </div>
-                  <div className="text-[#2d3748] font-semibold text-sm">{value}</div>
+                  <div className="text-black-100 font-semibold text-sm">{value}</div>
                 </div>
               </a>
             ))}
@@ -126,15 +156,15 @@ const Contact = () => {
                   <img src={logoImg} alt="Skill Workers" className="w-12 h-12 object-contain" />
                 </div>
 
-                <h4 className="text-[#2d3748] text-center mb-2">Get In Touch</h4>
-                <p className="text-[#718096] text-center p2 mb-8">
+                <h4 className="text-black-100 text-center mb-2">Get In Touch</h4>
+                <p className="text-slate-100 text-center p2 mb-8">
                   If you need assistance earlier than scheduled, please leave your name and phone
                   number so we can contact you and figure out how to meet your needs.
                 </p>
 
                 {/* Social Icons */}
                 <div className="mt-auto">
-                  <p className="text-xs font-bold text-[#718096] uppercase tracking-wider text-center mb-4">
+                  <p className="text-xs font-bold text-slate-100 uppercase tracking-wider text-center mb-4">
                     Follow Us
                   </p>
                   <div className="flex justify-center gap-3">
@@ -142,7 +172,7 @@ const Contact = () => {
                       <button
                         key={label}
                         aria-label={label}
-                        className="w-10 h-10 rounded-xl neu-btn flex items-center justify-center text-[#718096] hover:text-[#0B81F7] transition-colors duration-300"
+                        className="w-10 h-10 rounded-xl neu-btn flex items-center justify-center text-slate-100 hover:text-primary transition-colors duration-300"
                       >
                         {icon}
                       </button>
@@ -155,7 +185,7 @@ const Contact = () => {
             {/* Right Form */}
             <div className="lg:col-span-3">
               <div className="neu-out rounded-3xl p-8">
-                <h4 className="text-[#2d3748] mb-7">Send Us a Message</h4>
+                <h4 className="text-black-100 mb-7">Send Us a Message</h4>
                 <form onSubmit={handleSubmit}>
                   <div className="grid sm:grid-cols-2 gap-5 mb-5">
                     {[
@@ -171,29 +201,34 @@ const Contact = () => {
                           placeholder={placeholder}
                           value={formData[name]}
                           onChange={handleChange}
-                          required
-                          className="neu-input w-full px-5 py-3.5 rounded-xl text-sm text-[#2d3748] placeholder-[#4a5568] focus:outline-none"
+                          className="neu-input w-full px-5 py-3.5 rounded-xl text-sm text-black-100 placeholder-[#4a5568] focus:outline-none"
                         />
+                        {errors[name] && (
+                          <p className="text-red-500 text-sm mt-1">{errors[name]}</p>
+                        )}
                       </div>
                     ))}
                   </div>
 
-                  <textarea
-                    name="message"
-                    placeholder="Write your message here..."
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="neu-input w-full px-5 py-4 rounded-xl text-sm text-[#2d3748] placeholder-[#4a5568] focus:outline-none resize-none mb-6"
-                  />
+                  <div className="mb-6">
+                    <textarea
+                      name="message"
+                      placeholder="Write your message here..."
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={5}
+                      className="neu-input w-full px-5 py-4 rounded-xl text-sm text-black-100 placeholder-[#4a5568] focus:outline-none resize-none"
+                    />
+                    {errors.message && (
+                      <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                    )}
+                  </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full sm:w-auto neu-btn-primary text-white px-10 py-4 rounded-2xl font-semibold text-base hover:text-white transition-all duration-300 disabled:opacity-60"
-                  >
-                    {loading ? "Sending..." : "Send Message →"}
+                    className="btn neu-btn-primary transition-all duration-300">
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
                 </form>
               </div>
