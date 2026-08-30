@@ -96,46 +96,47 @@ const Services = () => {
       <div className="container">
 
         {/* Header */}
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-5 py-2 mb-8">
+        <div className="text-center mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-4 sm:px-5 py-1.5 sm:py-2 mb-6 sm:mb-8">
             <span className="w-2 h-2 rounded-full bg-primary" />
             <span className="p3 font-medium text-primary">
               Our Promise
             </span>
           </div>
-          <h2 className="text-black-100 mb-5.5">
+          <h2 className="text-black-100 mb-3 sm:mb-4">
             We Promise,{" "}
             <span className="text-gradient-primary">We Will</span>{" "}
             Protect You
           </h2>
-          <p className="text-slate-500 max-w-1/2 mx-auto">
+          <p className="text-slate-100 max-w-2xl mx-auto px-2 p">
             With 5+ years of experience, our services are designed to give you the best support from start to finish. Every job matters.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {services.map(({ icon, title, description, gradient, glow }) => (
             <div
               key={title}
-              className="neu-out rounded-2xl p-9 neu-hover group transition-all duration-300"
+              className="neu-out rounded-2xl p-6 sm:p-7 lg:p-8 neu-hover group transition-all duration-300 flex flex-col justify-between"
             >
-              {/* Icon */}
-              <div
-                className={`p-3.5 w-fit h-fit rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center mb-5 transition-transform duration-300`}
+              <div>
+                {/* Icon */}
+                <div
+                  className={`p-3 sm:p-3.5 w-fit h-fit rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center mb-4 sm:mb-5 transition-transform duration-300 group-hover:scale-105`}
+                >
+                  <span className="text-white services-icon">{icon}</span>
+                </div>
 
-              >
-                <span className="text-white services-icon">{icon}</span>
+                <h5 className="text-black-100 mb-2">{title}</h5>
+                {/* Divider */}
+                <div
+                  className="h-0.5 w-[30%] rounded-full mb-3 sm:mb-4 opacity-60"
+                  style={{ background: `linear-gradient(to right, transparent, ${glow})` }}
+                />
+
+                <p className="text-slate-100 p2">{description}</p>
               </div>
-
-              <h5 className="text-black-100 mb-2">{title}</h5>
-              {/* Divider */}
-              <div
-                className="h-0.5 w-[30%] rounded-full mb-4 opacity-60"
-                style={{ background: `linear-gradient(to right, transparent, ${glow})` }}
-              />
-
-              <p className="text-slate-100 p2">{description}</p>
             </div>
           ))}
         </div>

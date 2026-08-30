@@ -65,52 +65,54 @@ const serviceCards = [
 
 const OurServices = () => {
   return (
-    <div className="min-h-screen pt-40">
+    <div className="min-h-screen pt-20 sm:pt-24 lg:pt-28">
       <Navbar />
       <PageHeader title="Services of Skill Workers" breadcrumb="Services" />
 
       {/* Intro */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center mb-10 sm:mb-14">
             <div>
-              <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-5 py-2 mb-8">
+              <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-4 sm:px-5 py-1.5 sm:py-2 mb-6 sm:mb-8">
                 <span className="w-2 h-2 rounded-full bg-primary" />
                 <span className="p3 font-medium text-primary">
                   What We Offer
                 </span>
               </div>
 
-              <h2 className="text-black-100 mb-5">Our Services</h2>
-              <p className="text-slate-100">
+              <h2 className="text-black-100 mb-4 sm:mb-5">Our Services</h2>
+              <p className="text-slate-100 p">
                 At SkillWorkers, we offer guaranteed excellence in healthcare support,
                 support workers and related services. We pride ourselves on being different from the
                 competition by providing unique and valuable aspects that differentiate us from others.
               </p>
             </div>
-            <div className="neu-out rounded-3xl overflow-hidden h-64 lg:h-auto">
+            <div className="neu-out rounded-3xl overflow-hidden max-h-[380px] aspect-[4/3] lg:aspect-auto">
               <img src={img1} alt="Our Services" className="w-full h-full object-cover" />
             </div>
           </div>
 
           {/* Service Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {serviceCards.map(({ icon, title, description, gradient, color }) => (
-              <div key={title} className="neu-out rounded-2xl p-7 neu-hover group">
-                {/* Icon */}
-                <div
-                  className={`w-16 h-16 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110`}
-                  style={{ boxShadow: `0 8px 24px ${color}33` }}
-                >
-                  <span className="text-white text-2xl">{icon}</span>
+              <div key={title} className="neu-out rounded-2xl p-6 sm:p-7 neu-hover group flex flex-col justify-between">
+                <div>
+                  {/* Icon */}
+                  <div
+                    className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center mb-4 sm:mb-5 transition-transform duration-300 group-hover:scale-105`}
+                    style={{ boxShadow: `0 8px 24px ${color}33` }}
+                  >
+                    <span className="text-white text-xl sm:text-2xl">{icon}</span>
+                  </div>
+                  {/* Accent line */}
+                  <div
+                    className="h-0.5 w-10 rounded-full mb-3 sm:mb-4"
+                    style={{ background: `linear-gradient(to right, ${color}, transparent)` }}
+                  />
+                  <h5 className="text-black-100 mb-2 sm:mb-3">{title}</h5>
+                  <p className="text-slate-100 p2">{description}</p>
                 </div>
-                {/* Accent line */}
-                <div
-                  className="h-0.5 w-10 rounded-full mb-4"
-                  style={{ background: `linear-gradient(to right, ${color}, transparent)` }}
-                />
-                <h5 className="text-black-100 mb-3">{title}</h5>
-                <p className="text-slate-100 p2">{description}</p>
               </div>
             ))}
           </div>
@@ -118,21 +120,22 @@ const OurServices = () => {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12">
         <div className="container">
-          <div className="neu-out rounded-3xl p-10 lg:p-14 text-center">
-            <h3 className="text-black-100 mb-5.5">
+          <div className="neu-out rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-14 text-center">
+            <h3 className="text-black-100 mb-3 sm:mb-4">
               Ready to Find Your{" "}
               <span className="text-gradient-primary">Perfect Role?</span>
             </h3>
-            <p className="text-slate-100 max-w-xl mx-auto mb-8">
+            <p className="text-slate-100 max-w-xl mx-auto mb-6 sm:mb-8 p">
               Join hundreds of workers who have found meaningful employment through SkillWorkers.
             </p>
             <a
               href="https://skillworkers.co.uk/candidate/"
               target="_blank"
               rel="noopener noreferrer"
-                className="btn neu-btn-primary transition-all duration-300 w-fit mx-auto">
+              className="btn neu-btn-primary transition-all duration-300 w-full xs:w-auto mx-auto text-sm font-semibold px-8 py-3"
+            >
               Apply Now 
             </a>
           </div>

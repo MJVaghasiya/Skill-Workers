@@ -51,17 +51,17 @@ const Job = () => {
   };
 
   return (
-    <div className="min-h-screen pt-40 ">
+    <div className="min-h-screen pt-20 sm:pt-24 lg:pt-28">
       <Navbar />
       <PageHeader title="Job Search" breadcrumb="Job Search" />
 
-      <section className="py-12">
+      <section className="py-8 sm:py-12">
         <div className="container">
 
           {/* Search Bar */}
-          <div className="neu-out rounded-2xl p-6 mb-10">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
-              <div className="lg:col-span-1">
+          <div className="neu-out rounded-2xl p-4 sm:p-6 mb-8 sm:mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 items-end">
+              <div className="w-full">
                 <label className="block text-xs font-bold text-slate-100 uppercase tracking-wider mb-2">
                   Role / Keyword
                 </label>
@@ -73,12 +73,12 @@ const Job = () => {
                     value={titleQuery}
                     onChange={(e) => setTitleQuery(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleFilter()}
-                    className="neu-input w-full pl-11 pr-4 py-3.5 rounded-xl text-sm text-black-100 placeholder-slate-200 focus:outline-none"
+                    className="neu-input w-full pl-11 pr-4 py-3 sm:py-3.5 rounded-xl text-sm text-black-100 placeholder-slate-200 focus:outline-none"
                   />
                 </div>
               </div>
 
-              <div className="lg:col-span-1">
+              <div className="w-full">
                 <label className="block text-xs font-bold text-slate-100 uppercase tracking-wider mb-2">
                   Location
                 </label>
@@ -90,21 +90,21 @@ const Job = () => {
                     value={locationQuery}
                     onChange={(e) => setLocationQuery(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleFilter()}
-                    className="neu-input w-full pl-11 pr-4 py-3.5 rounded-xl text-sm text-black-100 placeholder-slate-200 focus:outline-none"
+                    className="neu-input w-full pl-11 pr-4 py-3 sm:py-3.5 rounded-xl text-sm text-black-100 placeholder-slate-200 focus:outline-none"
                   />
                 </div>
               </div>
 
-              <div className="flex gap-3 lg:col-span-2">
+              <div className="flex flex-col xs:flex-row gap-2.5 sm:gap-3 lg:col-span-2 w-full">
                 <button
                   onClick={handleFilter}
-                  className="flex-1 neu-btn-primary text-white py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 hover:text-white transition-all duration-300"
+                  className="flex-1 btn neu-btn-primary text-white py-3 sm:py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 hover:text-white transition-all duration-300"
                 >
                   <PiMagnifyingGlass className="text-base" /> Search Jobs
                 </button>
                 <button
                   onClick={clearFilters}
-                  className="neu-btn px-5 py-3.5 rounded-xl font-semibold text-sm text-slate-100 hover:text-[#D62C35] flex items-center gap-2 transition-all duration-300"
+                  className="btn neu-btn px-5 py-3 sm:py-3.5 rounded-xl font-semibold text-sm text-slate-100 hover:text-[#D62C35] flex items-center justify-center gap-2 transition-all duration-300"
                 >
                   <MdOutlineClear className="text-base" /> Clear
                 </button>
@@ -113,7 +113,7 @@ const Job = () => {
           </div>
 
           {/* Results count */}
-          <div className="mb-6 flex items-center justify-between">
+          <div className="mb-4 sm:mb-6 flex items-center justify-between">
             <p className="text-slate-100 font-medium">
               <span className="text-primary font-bold">{filteredData.length}</span> jobs found
             </p>
@@ -121,9 +121,9 @@ const Job = () => {
 
           {/* Loading */}
           {loading && (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {[...Array(3)].map((_, i) => (
-                <div key={i} className="neu-out rounded-2xl p-6 animate-pulse">
+                <div key={i} className="neu-out rounded-2xl p-5 sm:p-6 animate-pulse">
                   <div className="w-full h-40 rounded-xl bg-[#d0d5dc] mb-4" />
                   <div className="h-4 bg-[#d0d5dc] rounded w-3/4 mb-2" />
                   <div className="h-4 bg-[#d0d5dc] rounded w-1/2" />
@@ -134,11 +134,11 @@ const Job = () => {
 
           {/* No results */}
           {!loading && filteredData.length === 0 && (
-            <div className="neu-out rounded-3xl p-16 text-center">
-              <PiMagnifyingGlass className="text-5xl text-slate-200 mx-auto mb-4" />
+            <div className="neu-out rounded-3xl p-8 sm:p-14 text-center">
+              <PiMagnifyingGlass className="text-4xl sm:text-5xl text-slate-200 mx-auto mb-4" />
               <h4 className="text-black-100 mb-2">No Jobs Found</h4>
-              <p className="text-slate-100">Try adjusting your search criteria.</p>
-              <button onClick={clearFilters} className="mt-6 neu-btn-primary text-white px-8 py-3 rounded-xl font-semibold hover:text-white">
+              <p className="text-slate-100 p">Try adjusting your search criteria.</p>
+              <button onClick={clearFilters} className="mt-5 sm:mt-6 btn neu-btn-primary text-white px-8 py-3 rounded-xl font-semibold hover:text-white mx-auto">
                 Clear Filters
               </button>
             </div>
@@ -146,12 +146,12 @@ const Job = () => {
 
           {/* Job Cards */}
           {!loading && filteredData.length > 0 && (
-            <div className="space-y-6">
+            <div className="space-y-5 sm:space-y-6">
               {filteredData.map((item, i) => (
                 <div key={i} className="neu-out rounded-2xl overflow-hidden">
-                  <div className="grid md:grid-cols-4 gap-0">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
                     {/* Image */}
-                    <div className="md:col-span-1 h-48 md:h-auto overflow-hidden">
+                    <div className="md:col-span-1 h-48 sm:h-56 md:h-auto overflow-hidden">
                       <img
                         src={item.image}
                         alt={item.title}
@@ -160,50 +160,50 @@ const Job = () => {
                     </div>
 
                     {/* Details */}
-                    <div className="md:col-span-2 p-6 flex flex-col justify-between">
+                    <div className="md:col-span-2 p-4 sm:p-6 flex flex-col justify-between">
                       <div>
                         <div className="flex flex-wrap gap-2 mb-3">
-                          <span className="neu-out-sm rounded-lg px-3 py-1 text-xs font-semibold text-primary">
+                          <span className="neu-out-sm rounded-lg px-2.5 py-1 text-xs font-semibold text-primary">
                             {item.title}
                           </span>
                         </div>
                         <div className="space-y-2 mb-4">
                           <div className="flex items-center gap-2 text-sm text-slate-100">
-                            <RiMapPinLine className="text-primary" />
-                            <span>{item.location}</span>
+                            <RiMapPinLine className="text-primary shrink-0" />
+                            <span className="break-words">{item.location}</span>
                           </div>
                           <div className="flex items-center gap-2 text-sm text-slate-100">
-                            <RiMoneyDollarCircleLine className="text-[#36D97C]" />
+                            <RiMoneyDollarCircleLine className="text-[#36D97C] shrink-0" />
                             <span>{item.salary}</span>
                           </div>
                           <div className="flex items-center gap-2 text-sm text-slate-100">
-                            <RiBriefcaseLine className="text-[#9B68E6]" />
+                            <RiBriefcaseLine className="text-[#9B68E6] shrink-0" />
                             <span>Full Time</span>
                           </div>
                         </div>
                         <p className="text-slate-100 p2 line-clamp-2">{item.description}</p>
                       </div>
 
-                      <div className="mt-5 flex gap-3">
+                      <div className="mt-4 sm:mt-5 flex flex-wrap gap-2.5 sm:gap-3">
                         <a
                           href="https://skillworkers.co.uk/candidate/"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="neu-btn-primary text-white px-6 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 hover:text-white transition-all duration-300"
+                          className="btn neu-btn-primary text-white px-5 py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 hover:text-white transition-all duration-300"
                         >
                           Apply Now <FaArrowRight className="text-xs" />
                         </a>
-                        <button className="neu-btn px-6 py-2.5 rounded-xl text-sm font-semibold text-[#4a5568] hover:text-primary transition-all duration-300">
+                        <button className="btn neu-btn px-5 py-2.5 rounded-xl text-sm font-semibold text-[#4a5568] hover:text-primary transition-all duration-300">
                           View Details
                         </button>
                       </div>
                     </div>
 
                     {/* Map */}
-                    <div className="md:col-span-1 h-48 md:h-auto min-h-50">
+                    <div className="md:col-span-1 h-48 sm:h-56 md:h-auto min-h-[200px]">
                       <iframe
                         title={`Map: ${item.location}`}
-                        className="w-full h-full"
+                        className="w-full h-full min-h-[200px]"
                         style={{ border: 0 }}
                         src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBEBT9O1STei5aTy7nodtI_6FkrjjgBQNc&q=${encodeURIComponent(item.location)}`}
                         allowFullScreen

@@ -7,6 +7,7 @@
   --container-padding: 1rem;
 
   /* Breakpoints */
+  --breakpoint-xs: 480px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 769px;
   --breakpoint-lg: 992px;
@@ -208,59 +209,92 @@
   }
   html {
     @apply scroll-smooth;
+    overflow-x: clip;
+    max-width: 100vw;
   }
   body {
     @apply text-black-100 antialiased bg-surface-bg;
     font-family: "NotoSerif", serif;
+    overflow-x: clip;
+    max-width: 100vw;
+    width: 100%;
   }
 
-  /* ── Headings: ScienceGothic display font ─────────────────── */
+  #root {
+    overflow-x: clip;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  img,
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ── Headings: ScienceGothic display font with fluid responsive scaling ─── */
   h1,
   .h1 {
-    @apply font-extrabold 2xl:text-[64px] 1xl:text-[50px] xl:text-[45px] lg:text-[42px] md:text-[38px] text-[35px] 2xl:leading-20 1xl:leading-[65px] xl:leading-12.5 md:leading-[45px] leading-10.5;
+    @apply font-extrabold text-[28px] xs:text-[34px] sm:text-[40px] md:text-[44px] lg:text-[48px] xl:text-[54px] 2xl:text-[64px] leading-[1.2] tracking-tight;
     font-family: "ScienceGothic", sans-serif;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   h2,
   .h2 {
-    @apply font-bold 2xl:text-[52px] 1xl:text-[50px] xl:text-[48px] lg:text-[44px] md:text-[40px] sm:text-4xl text-[28px] 1xl:leading-16 lg:leading-14.5 sm:leading-[45px] leading-9.5;
+    @apply font-bold text-[24px] xs:text-[28px] sm:text-[34px] md:text-[38px] lg:text-[42px] xl:text-[46px] 2xl:text-[52px] leading-[1.25] tracking-tight;
     font-family: "ScienceGothic", sans-serif;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   h3,
   .h3 {
-    @apply font-bold 2xl:text-[48px] 1xl:text-[44px] xl:text-[40px] lg:text-[36px] sm:text-[32px] text-2xl 2xl:leading-[53px] md:leading-[47px] sm:leading-10 leading-8;
+    @apply font-bold text-[20px] xs:text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] 2xl:text-[48px] leading-[1.3];
     font-family: "ScienceGothic", sans-serif;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   h4,
   .h4 {
-    @apply font-semibold 2xl:text-[40px] 1xl:text-4xl xl:text-[31px] lg:text-[28px] text-[25px] 2xl:leading-13 1xl:leading-[47px] lg:leading-10.5 leading-7.5;
+    @apply font-semibold text-[18px] xs:text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] xl:text-[32px] 2xl:text-[40px] leading-[1.35];
     font-family: "ScienceGothic", sans-serif;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   h5,
   .h5 {
-    @apply font-semibold 2xl:text-[30px] 1xl:text-[28px] xl:text-[26px] sm:text-[22px] text-[18px] 2xl:leading-12.5 sm:leading-[45px] leading-7;
+    @apply font-semibold text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] 2xl:text-[30px] leading-[1.4];
     font-family: "ScienceGothic", sans-serif;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   h6,
   .h6 {
-    @apply 2xl:text-2xl lg:text-[20px] text-lg leading-8;
+    @apply font-semibold text-[14px] xs:text-[15px] sm:text-[16px] lg:text-[18px] 2xl:text-[22px] leading-[1.45];
     font-family: "ScienceGothic", sans-serif;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   /* ── Body text: NotoSerif ─────────────────────────────────── */
   p,
   .p {
-    @apply 2xl:text-xl xl:text-[17px] lg:text-base text-[15px] 1xl:leading-8 sm:leading-7 leading-6;
+    @apply text-[14px] sm:text-[15px] lg:text-[16px] xl:text-[17px] 2xl:text-xl leading-[1.65] text-slate-100;
+    overflow-wrap: break-word;
   }
   .p2 {
-    @apply 2xl:text-lg xl:text-base text-[15px] xl:leading-7.5 leading-6;
+    @apply text-[13px] sm:text-[14px] lg:text-[15px] xl:text-base 2xl:text-lg leading-[1.6];
+    overflow-wrap: break-word;
   }
   .p3 {
-    @apply 2xl:text-base md:text-sm text-[13px] leading-[150%] font-light;
+    @apply text-[12px] sm:text-[13px] md:text-sm 2xl:text-base leading-[1.5] font-light;
+    overflow-wrap: break-word;
   }
 
   /* ── Links ────────────────────────────────────────────────── */
   a {
-    @apply no-underline text-black-100 transition-colors duration-300  hover:text-primary active:text-primary focus:text-primary;
+    @apply no-underline text-black-100 transition-colors duration-300 hover:text-primary active:text-primary focus:text-primary;
   }
 
   /* ── Underline animation ──────────────────────────────────── */
@@ -274,7 +308,13 @@
     @apply w-full;
   }
   .container {
-    @apply mx-auto px-4 w-full;
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@media (max-width: 767px) {
+  section {
+    padding-bottom: 2.5rem !important;
   }
 }
 
@@ -305,7 +345,7 @@
 
   /* ── Neumorphism flat button ──────────────────────────────── */
   .btn {
-    @apply rounded-xl 2xl:text-lg xl:text-[15px] text-sm leading-6 font-normal tracking-normal 2xl:py-4 xl:py-3 lg:py-2.5 sm:py-2 py-[5px] 2xl:px-10 1xl:px-8.5 xl:px-7 sm:px-5 px-4 flex items-center justify-center whitespace-nowrap;
+    @apply rounded-xl 2xl:text-lg xl:text-[15px] text-sm leading-6 font-medium tracking-normal 2xl:py-3.5 xl:py-3 lg:py-2.5 sm:py-2.5 py-2 2xl:px-8 xl:px-7 sm:px-5 px-4 min-h-[42px] sm:min-h-[44px] inline-flex items-center justify-center text-center cursor-pointer transition-all duration-300;
   }
   .neu-btn {
     @apply bg-surface-bg rounded-xl hover:shadow-neu-btn-in active:shadow-neu-btn-in focus:shadow-neu-btn-in transition-all duration-200 ease-in-out;
