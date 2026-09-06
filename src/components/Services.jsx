@@ -100,17 +100,15 @@ const Services = () => {
           <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-4 sm:px-5 py-1.5 sm:py-2 mb-6 sm:mb-8">
             <span className="w-2 h-2 rounded-full bg-primary" />
             <span className="p3 font-medium text-primary">
-              Our Promise
+              Our Services
             </span>
           </div>
           <h2 className="text-black-100 mb-3 sm:mb-4">
-            We Promise,{" "}
-            <span className="text-gradient-primary">We Will</span>{" "}
-            Protect You
+           We Support Your {" "}
+            <span className="text-gradient-primary">Career Journey</span>
           </h2>
           <p className="text-slate-100 max-w-2xl mx-auto px-2 p">
-            With 5+ years of experience, our services are designed to give you the best support from start to finish. Every job matters.
-          </p>
+We connect skilled workers with trusted employers, providing guidance and support throughout every stage of their career journey.          </p>
         </div>
 
         {/* Grid */}

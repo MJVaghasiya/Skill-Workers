@@ -35,7 +35,9 @@ const AchieveGoal = () => {
               Together, We Can Do{" "}
               <span className="text-gradient-primary">Great Things</span>
             </h3>
-
+            <p className="mb-6 sm:mb-8 max-w-2xl w-full">
+              At Skill Workers, we connect talented individuals with trusted employers across a wide range of industries. From job search to placement, our team provides expert guidance and ongoing support to help you build a successful career.
+            </p>
             {/* Steps */}
             <div className="flex flex-wrap items-center justify-center xs:justify-start gap-2 sm:gap-3 mb-6 sm:mb-8 py-3 px-4 sm:py-3.5 sm:px-6 w-full xs:w-fit neu-in rounded-2xl">
               {steps.map(({ label, color }, i) => (
@@ -54,14 +56,14 @@ const AchieveGoal = () => {
             </div>
 
             {/* Benefits */}
-            <ul className="space-y-3.5 sm:space-y-5 mb-6 sm:mb-8">
+            {/* <ul className="space-y-3.5 sm:space-y-5 mb-6 sm:mb-8">
               {benefits.map((benefit) => (
                 <li key={benefit} className="flex items-center gap-3 p2">
                   <IoMdCheckmarkCircleOutline className="text-primary font-bold text-xl sm:text-2xl shrink-0" />
                   <span className="text-[#4a5568] font-medium">{benefit}</span>
                 </li>
               ))}
-            </ul>
+            </ul> */}
 
             <a
               href="https://skillworkers.co.uk/candidate/"
