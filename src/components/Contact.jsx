@@ -153,8 +153,8 @@ const Contact = () => {
               <div className="neu-out rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 h-full flex flex-col justify-between">
                 <div>
                   {/* Logo spin */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full neu-out-sm flex items-center justify-center mx-auto mb-5 sm:mb-6 spin-slow">
-                    <img src={logoImg} alt="Skill Workers" className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
+                  <div className="flex items-center justify-center mx-auto mb-5 sm:mb-6 spin-slow">
+                    <img src={logoImg} alt="Skill Workers" className="size-10 sm:size-20 object-contain" />
                   </div>
 
                   <h4 className="text-black-100 text-center mb-2">Get In Touch</h4>

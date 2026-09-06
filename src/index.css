@@ -211,8 +211,8 @@
     @apply scroll-smooth overflow-x-clip max-w-screen;
   }
   body {
-    @apply text-black-100 antialiased bg-surface-bg font-noto-serif overflow-x-clip max-w-screen w-full;
-    /* font-family: "NotoSerif", serif; */
+    @apply text-black-100 antialiased bg-surface-bg overflow-x-clip max-w-screen w-full;
+    font-family: "NotoSerif", serif;
   }
 
   #root {
