@@ -229,7 +229,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="btn neu-btn-primary transition-all duration-300 w-full sm:w-auto px-8 py-3 text-sm font-semibold"
+                    className="btn neu-btn-primary transition-all duration-300 w-full sm:w-auto"
                   >
                     {loading ? "Sending..." : "Send Message"}
                   </button>

@@ -104,11 +104,11 @@ const Services = () => {
             </span>
           </div>
           <h2 className="text-black-100 mb-3 sm:mb-4">
-           We Support Your {" "}
+            We Support Your {" "}
             <span className="text-gradient-primary">Career Journey</span>
           </h2>
-          <p className="text-slate-100 max-w-2xl mx-auto px-2 p">
-We connect skilled workers with trusted employers, providing guidance and support throughout every stage of their career journey.          </p>
+          <p className="text-slate-100 max-w-[60%] mx-auto px-2 p">
+            We connect skilled workers with trusted employers, providing guidance and support throughout every stage of their career journey.          </p>
         </div>
 
         {/* Grid */}

@@ -82,7 +82,7 @@ const Navbar = () => {
                 href="https://skillworkers.co.uk/candidate/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn neu-btn-primary transition-all duration-300 text-sm font-semibold px-6 py-2.5"
+                className="btn neu-btn-primary transition-all duration-300 "
               >
                 Apply Now
               </a>
@@ -91,7 +91,7 @@ const Navbar = () => {
             {/* Mobile Hamburger */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden w-10 h-10 rounded-xl neu-out-sm flex flex-col items-center justify-center gap-1.5 transition-all duration-300 shrink-0 cursor-pointer active:scale-95"
+              className="lg:hidden w-10 h-10 rounded-xl flex flex-col items-center justify-center gap-1.5 transition-all duration-300 shrink-0 cursor-pointer active:scale-95"
               aria-label="Toggle menu"
             >
               <span

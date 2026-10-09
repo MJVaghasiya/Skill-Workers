@@ -334,10 +334,10 @@
 
   /* ── Neumorphism flat button ──────────────────────────────── */
   .btn {
-    @apply rounded-xl 2xl:text-lg xl:text-[15px] text-sm leading-6 font-medium tracking-normal 2xl:py-3.5 xl:py-3 lg:py-2.5 sm:py-2.5 py-2 2xl:px-8 xl:px-7 sm:px-5 px-4 min-h-[42px] sm:min-h-[44px] inline-flex items-center justify-center text-center cursor-pointer transition-all duration-300;
+    @apply lg:rounded-xl sm:rounded-[10px] rounded-lg 2xl:text-lg xl:text-[15px] text-sm leading-6 font-medium tracking-normal 2xl:py-3.5 xl:py-3 lg:py-2.5 sm:py-2.5 py-2 2xl:px-8 xl:px-7 sm:px-5 px-4 min-h-[42px] sm:min-h-[44px] inline-flex items-center justify-center text-center cursor-pointer transition-all duration-300;
   }
   .neu-btn {
-    @apply bg-surface-bg rounded-xl hover:shadow-neu-btn-in active:shadow-neu-btn-in focus:shadow-neu-btn-in transition-all duration-200 ease-in-out;
+    @apply bg-surface-bg hover:shadow-neu-btn-in active:shadow-neu-btn-in focus:shadow-neu-btn-in transition-all duration-200 ease-in-out;
     box-shadow: var(--shadow-neu-btn);
   }
 
@@ -390,5 +390,17 @@
   }
   section.Toastify {
     @apply p-0!;
+  }
+  /* .about-cards .cards:first-child{
+    @apply border-b border-r border-gray-400;
+  }
+  .about-cards .cards:nth-child(2){
+    @apply border-b border-gray-400;
+  }
+  .about-cards .cards:nth-child(3){
+    @apply border-r border-gray-400;
+  } */
+  .about-cards .cards{
+    @apply flex items-start gap-3 p-3 rounded-[10px]; 
   }
 }

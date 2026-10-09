@@ -3,7 +3,9 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Services from "./Services";
 import AchieveGoal from "./AchieveGoal";
+import WhyChooseUs from "./WhyChooseUs";
 import FitIn from "./FitIn";
+import CareerCTA from "./CareerCTA";
 import Footer from "./Footer";
 
 const Home = () => {
@@ -13,7 +15,9 @@ const Home = () => {
       <Hero />
       <Services />
       <AchieveGoal />
+      <WhyChooseUs />
       <FitIn />
+      <CareerCTA />
       <Footer />
     </div>
   );

@@ -57,13 +57,13 @@ const Hero = () => {
                 href="https://skillworkers.co.uk/candidate/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn neu-btn-primary transition-all duration-300 w-full xs:w-auto text-sm font-semibold px-6 py-3"
+                className="btn neu-btn-primary transition-all duration-300 w-full xs:w-auto"
               >
                 Get Started Now
               </a>
               <a
                 href="#Services"
-                className="btn neu-btn w-full xs:w-auto text-sm font-medium px-6 py-3"
+                className="btn neu-btn w-full xs:w-auto "
               >
                 Our Services
               </a>
@@ -90,7 +90,7 @@ const Hero = () => {
           >
             {/* Main image container */}
             <div className="relative w-[250px] h-[250px] xs:w-[290px] xs:h-[290px] sm:w-[350px] sm:h-[350px] md:w-[390px] md:h-[390px] lg:w-[440px] lg:h-[440px] max-w-[85vw] max-h-[85vw] mx-auto">
-              <div className="w-full h-full rounded-full neu-out-lg spin-slow overflow-hidden flex items-center justify-center">
+              <div className="w-full h-full rounded-full spin-slow overflow-hidden flex items-center justify-center">
                 <img
                   src={heroBanner}
                   alt="Skill Workers Hero"

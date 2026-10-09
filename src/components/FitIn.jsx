@@ -66,7 +66,7 @@ const FitIn = () => {
                 </div>
                 {/* Overlay on hover */}
                 <div
-                  className={`absolute inset-0 bg-linear-to-t from-primary/80 to-transparent flex items-end justify-center pb-4 transition-opacity duration-300 ${
+                  className={`absolute inset-0 bg-linear-to-t from-black/40 to-transparent flex items-end justify-center pb-4 transition-opacity duration-300 ${
                     hovered === i ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -103,7 +103,7 @@ const FitIn = () => {
             href="https://skillworkers.co.uk/candidate/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn neu-btn-primary transition-all duration-300 w-full xs:w-auto mx-auto text-sm font-semibold px-8 py-3"
+            className="btn neu-btn-primary transition-all duration-300 w-full xs:w-auto mx-auto "
           >
             View All Opportunities
           </a>

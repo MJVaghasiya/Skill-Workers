@@ -1,5 +1,5 @@
 import React from "react";
-import goalImg from "/assets/team.webp";
+import goalImg from "../../dist/assets/team.webp";
 // import { IoMdCheckmark } from "react-icons/io";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
@@ -20,14 +20,21 @@ const AchieveGoal = () => {
   return (
     <section>
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
 
           {/* Left */}
           <div>
-            <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-4 sm:px-5 py-1.5 sm:py-2 mb-6 sm:mb-8">
+            {/* <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-4 sm:px-5 py-4 mb-6 sm:mb-8">
               <span className="w-2 h-2 rounded-full bg-primary" />
               <span className="p3 font-medium text-primary">
                 We're always with you
+              </span>
+            </div> */}
+
+            <div className="inline-flex items-center gap-2 neu-out-sm rounded-full px-3.5 py-1.5 sm:px-4 sm:py-2 mb-6 sm:mb-8">
+              <span className="size-2 rounded-full bg-primary pulse-dot" />
+              <span className="p3 font-medium text-primary">
+               We're always with you
               </span>
             </div>
 
@@ -69,7 +76,7 @@ const AchieveGoal = () => {
               href="https://skillworkers.co.uk/candidate/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn neu-btn-primary transition-all duration-300 w-full xs:w-auto text-sm font-semibold px-6 py-3"
+              className="btn neu-btn-primary transition-all duration-300 w-full xs:w-auto "
             >
               Join Our Team
             </a>
@@ -78,11 +85,11 @@ const AchieveGoal = () => {
           {/* Right Image */}
           <div className="relative flex items-center justify-center">
             {/* Image frame */}
-            <div className="relative w-full max-w-lg mx-auto flex items-center justify-center">
+            <div className="relative w-full rounded-2xl overflow-hidden max-w-full mx-auto flex items-center justify-center h-full">
               <img
                 src={goalImg}
                 alt="Achieve Goal"
-                className="w-full h-auto object-contain max-h-[420px]"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

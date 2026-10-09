@@ -134,9 +134,9 @@ const OurServices = () => {
               href="https://skillworkers.co.uk/candidate/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn neu-btn-primary transition-all duration-300 w-full xs:w-auto mx-auto text-sm font-semibold px-8 py-3"
+              className="btn neu-btn-primary transition-all duration-300 w-full xs:w-auto mx-auto"
             >
-              Apply Now 
+              Apply Now
             </a>
           </div>
         </div>
