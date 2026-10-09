@@ -60,7 +60,7 @@ const Job = () => {
 
           {/* Search Bar */}
           <div className="neu-out rounded-2xl p-4 sm:p-6 mb-8 sm:mb-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 items-end">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 items-end">
               <div className="w-full">
                 <label className="block text-xs font-bold text-slate-100 uppercase tracking-wider mb-2">
                   Role / Keyword
@@ -95,16 +95,16 @@ const Job = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col xs:flex-row gap-2.5 sm:gap-3 lg:col-span-2 w-full">
+              <div className="flex flex-col xs:flex-row gap-2.5 sm:gap-3 w-full justify-end">
                 <button
                   onClick={handleFilter}
-                  className="flex-1 btn neu-btn-primary text-white py-3 sm:py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 hover:text-white transition-all duration-300"
+                  className="btn flex items-center justify-center gap-2 neu-btn-primary w-fit"
                 >
                   <PiMagnifyingGlass className="text-base" /> Search Jobs
                 </button>
                 <button
                   onClick={clearFilters}
-                  className="btn neu-btn px-5 py-3 sm:py-3.5 rounded-xl font-semibold text-sm text-slate-100 hover:text-[#D62C35] flex items-center justify-center gap-2 transition-all duration-300"
+                  className="btn neu-btn text-slate-100 hover:text-[#D62C35] flex items-center justify-center gap-2 transition-all duration-300"
                 >
                   <MdOutlineClear className="text-base" /> Clear
                 </button>
